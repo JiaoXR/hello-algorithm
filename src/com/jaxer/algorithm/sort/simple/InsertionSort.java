@@ -1,5 +1,6 @@
-package com.jaxer.algorithm.sort;
+package com.jaxer.algorithm.sort.simple;
 
+import com.jaxer.algorithm.util.Common;
 import com.jaxer.algorithm.util.SortUtil;
 
 import java.util.Arrays;
@@ -14,11 +15,21 @@ import java.util.Arrays;
  */
 public class InsertionSort {
     public static void main(String[] args) {
-        int[] array = SortUtil.array;
+        int[] array = Common.defaultArray;
         System.out.println(Arrays.toString(array));
 
         sort(array);
         System.out.println(Arrays.toString(array));
+    }
+
+    public static void sort02(int[] a) {
+        if (a.length <= 1) return;
+
+        for (int i = 1; i < a.length; i++) {
+            for (int j = i - 1; j >= 0 && a[j] > a[j + 1]; j--) {
+                SortUtil.swap(a, j, j + 1);
+            }
+        }
     }
 
     public static void sort(int[] a) {

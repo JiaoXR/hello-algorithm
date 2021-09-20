@@ -1,5 +1,6 @@
-package com.jaxer.algorithm.sort;
+package com.jaxer.algorithm.sort.simple;
 
+import com.jaxer.algorithm.util.Common;
 import com.jaxer.algorithm.util.SortUtil;
 
 import java.util.Arrays;
@@ -14,7 +15,7 @@ import java.util.Arrays;
  */
 public class BubbleSort {
     public static void main(String[] args) {
-        int[] a = SortUtil.array;
+        int[] a = Common.defaultArray;
         System.out.println(Arrays.toString(a));
 
         sort02(a);
@@ -50,10 +51,10 @@ public class BubbleSort {
     public static void sort01(int[] a) {
         if (a.length <= 1) return;
 
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i] > a[j]) {
-                    SortUtil.swap(a, i, j);
+        for (int i = a.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (a[j] > a[j + 1]) {
+                    SortUtil.swap(a, j, j + 1);
                 }
             }
         }

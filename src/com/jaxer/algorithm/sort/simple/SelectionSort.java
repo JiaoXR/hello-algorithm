@@ -1,4 +1,4 @@
-package com.jaxer.algorithm.sort;
+package com.jaxer.algorithm.sort.simple;
 
 import com.jaxer.algorithm.util.SortUtil;
 

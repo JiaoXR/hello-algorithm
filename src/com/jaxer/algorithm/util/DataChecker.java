@@ -1,4 +1,6 @@
-package com.jaxer.algorithm.sort;
+package com.jaxer.algorithm.util;
+
+import com.jaxer.algorithm.sort.simple.InsertionSort;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -27,9 +29,10 @@ public class DataChecker {
         System.arraycopy(array, 0, copiedArray, 0, array.length);
 
         Arrays.sort(array);
-//        BubbleSort.sort02(copiedArray);
+//        BubbleSort.sort01(copiedArray);
 //        SelectionSort.sort(copiedArray);
-        InsertionSort.sort(copiedArray);
+//        InsertionSort.sort(copiedArray);
+        InsertionSort.sort02(copiedArray);
 
         boolean same = true;
         for (int i = 0; i < array.length; i++) {
