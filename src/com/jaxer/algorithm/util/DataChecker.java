@@ -1,6 +1,7 @@
 package com.jaxer.algorithm.util;
 
 import com.jaxer.algorithm.sort.MergeSort;
+import com.jaxer.algorithm.sort.QuickSort;
 import com.jaxer.algorithm.sort.simple.InsertionSort;
 
 import java.util.Arrays;
@@ -34,7 +35,8 @@ public class DataChecker {
 //        SelectionSort.sort(copiedArray);
 //        InsertionSort.sort(copiedArray);
 //        InsertionSort.sort02(copiedArray);
-        MergeSort.sort(copiedArray, 0, copiedArray.length - 1);
+//        MergeSort.sort(copiedArray, 0, copiedArray.length - 1);
+        QuickSort.sort(copiedArray, 0, copiedArray.length - 1);
 
         boolean same = true;
         for (int i = 0; i < array.length; i++) {
