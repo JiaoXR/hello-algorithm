@@ -41,14 +41,18 @@ public class QuickSort {
      * @return 分区后的数组
      */
     private static int[] partition(int[] a, int left, int right) {
+        // 左右边界
         int less = left - 1;
         int more = right;
         while (left < more) {
+            // 该元素小于基准元素，<边界右移，交换数据，当前指针右移
             if (a[left] < a[right]) {
                 SortUtil.swap(a, ++less, left++);
+                // 该元素大于基准元素，>边界左移，当前指针不移动
             } else if (a[left] > a[right]) {
                 SortUtil.swap(a, --more, left);
             } else {
+                // 该元素等于基准元素，不移动，当前指针后移
                 left++;
             }
         }
