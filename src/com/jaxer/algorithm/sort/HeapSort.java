@@ -33,6 +33,10 @@ public class HeapSort {
         for (int i = 0; i < a.length; i++) { // O(N)
             heapInsert(a, i); // O(logN)
         }
+        // 该方式比上面的for循环更快一点
+//        for (int i = a.length; i >= 0; i--) {
+//            heapify(a, i, a.length);
+//        }
         int heapSize = a.length;
         SortUtil.swap(a, 0, --heapSize);
         while (heapSize > 0) { // O(N)

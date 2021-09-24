@@ -13,12 +13,12 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
         int[] array = Common.defaultArray;
-        sort(array, 0, array.length - 1);
+        sort(array);
         System.out.println(Arrays.toString(array));
     }
 
-    public static void sort(int[] a, int left, int right) {
-        process(a, left, right);
+    public static void sort(int[] a) {
+        process(a, 0, a.length - 1);
     }
 
     // 归

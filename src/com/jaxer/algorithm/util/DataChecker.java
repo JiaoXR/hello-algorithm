@@ -36,7 +36,7 @@ public class DataChecker {
 //        SelectionSort.sort(copiedArray);
 //        InsertionSort.sort(copiedArray);
 //        InsertionSort.sort02(copiedArray);
-//        MergeSort.sort(copiedArray, 0, copiedArray.length - 1);
+//        MergeSort.sort(copiedArray);
 //        QuickSort.sort(copiedArray, 0, copiedArray.length - 1);
         HeapSort.sort(copiedArray);
 
