@@ -8,7 +8,7 @@ package com.jaxer.algorithm.leetcode.linkedlist;
  * @since 2021/9/15 22:13
  */
 public class Solution206 {
-    public ListNode reverseList02(ListNode head) {
+    public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -23,20 +23,5 @@ public class Solution206 {
             curr = next;
         }
         return prev;
-    }
-
-    public ListNode reverseList01(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-        ListNode newHead = null;
-        while (head != null) {
-            ListNode next = head.next;
-            head.next = newHead;
-            newHead = head;
-            head = next;
-        }
-        return newHead;
     }
 }
