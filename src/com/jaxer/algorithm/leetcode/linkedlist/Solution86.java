@@ -21,7 +21,7 @@ public class Solution86 {
         ListNode bH = null;
         ListNode bT = null;
         while (head != null) {
-            // 注意循环问题
+            // 摘除当前节点
             ListNode next = head.next;
             head.next = null;
             // 小于特定值的元素放到链表一
