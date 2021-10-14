@@ -1,5 +1,7 @@
 package com.jaxer.algorithm.tree;
 
+import com.jaxer.algorithm.leetcode.tree.TreeNode;
+
 import java.util.Stack;
 
 /**
@@ -8,17 +10,17 @@ import java.util.Stack;
  * @author jiaoxiangru
  * @since 2021/9/30 18:40
  */
-public class Recur {
+public class BinaryTree {
     public static void main(String[] args) {
         TreeNode head = buildTree();
 
-//        preOrderRecur(head);
-//        System.out.println();
+        preOrderRecur(head);
+        System.out.println();
 //        preOrderUnRecur(head);
 
-        inOrderRecur(head);
-        System.out.println();
-        inOrderUnRecur(head);
+//        inOrderRecur(head);
+//        System.out.println();
+//        inOrderUnRecur(head);
 
 //        postOrderRecur(head);
 //        System.out.println();
