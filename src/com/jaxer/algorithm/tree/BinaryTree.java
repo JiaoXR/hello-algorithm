@@ -2,7 +2,7 @@ package com.jaxer.algorithm.tree;
 
 import com.jaxer.algorithm.leetcode.tree.TreeNode;
 
-import java.util.Stack;
+import java.util.*;
 
 /**
  * 二叉树遍历
@@ -12,19 +12,47 @@ import java.util.Stack;
  */
 public class BinaryTree {
     public static void main(String[] args) {
-        TreeNode head = buildTree();
+        TreeNode root = buildTree();
 
-        preOrderRecur(head);
-        System.out.println();
-//        preOrderUnRecur(head);
+        levelOrder(root);
 
-//        inOrderRecur(head);
+//        preOrderRecur(root);
 //        System.out.println();
-//        inOrderUnRecur(head);
+//        preOrderUnRecur(root);
 
-//        postOrderRecur(head);
+//        inOrderRecur(root);
 //        System.out.println();
-//        postOrderUnRecur(head);
+//        inOrderUnRecur(root);
+
+//        postOrderRecur(root);
+//        System.out.println();
+//        postOrderUnRecur(root);
+    }
+
+    /**
+     * 二叉树按层遍历
+     *
+     * @param root 二叉树头节点
+     */
+    private static void levelOrder(TreeNode root) {
+        if (root == null) return;
+
+        List<Integer> list = new ArrayList<>();
+
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            root = queue.poll();
+            list.add(root.val);
+            if (root.left != null) {
+                queue.add(root.left);
+            }
+            if (root.right != null) {
+                queue.add(root.right);
+            }
+        }
+
+        System.out.println(list);
     }
 
     /**
@@ -34,6 +62,7 @@ public class BinaryTree {
      */
     private static void preOrderRecur(TreeNode head) {
         if (head == null) return;
+
         System.out.print(head.val + " ");
         preOrderRecur(head.left);
         preOrderRecur(head.right);
@@ -71,6 +100,7 @@ public class BinaryTree {
      */
     private static void inOrderRecur(TreeNode head) {
         if (head == null) return;
+
         inOrderRecur(head.left);
         System.out.print(head.val + " ");
         inOrderRecur(head.right);
@@ -106,6 +136,7 @@ public class BinaryTree {
      */
     private static void postOrderRecur(TreeNode head) {
         if (head == null) return;
+
         postOrderRecur(head.left);
         postOrderRecur(head.right);
         System.out.print(head.val + " ");
